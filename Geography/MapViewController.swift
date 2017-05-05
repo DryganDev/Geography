@@ -11,22 +11,22 @@ import MapKit
 import CoreLocation
 
 class MapViewController: UIViewController {
-//    @IBOutlet var myMapView: MKMapView!
+    @IBOutlet var myMapView: MKMapView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
-//        centerMapOnLocation(location: initialLocation)
+        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
+        centerMapOnLocation(location: initialLocation)
         
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-//    let regionRadius: CLLocationDistance = 100000
-//    func centerMapOnLocation(location:CLLocation) {
-//        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
-//        myMapView.setRegion(coordinateRegion, animated: true)
-//    }
-//    
+    let regionRadius: CLLocationDistance = 100000
+    func centerMapOnLocation(location:CLLocation) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
+        myMapView.setRegion(coordinateRegion, animated: true)
+    }
+    
     
     
     override func didReceiveMemoryWarning() {
