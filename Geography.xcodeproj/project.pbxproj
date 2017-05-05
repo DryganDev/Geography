@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD1FAA9A1EBBF4EA00694E0F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1FAA991EBBF4EA00694E0F /* SettingsViewController.swift */; };
+		DD1FAA9C1EBBFD1C00694E0F /* customAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1FAA9B1EBBFD1C00694E0F /* customAnnotationView.swift */; };
 		DD7626D31EBBE77800B2A7EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7626D21EBBE77800B2A7EA /* AppDelegate.swift */; };
-		DD7626D51EBBE77800B2A7EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7626D41EBBE77800B2A7EA /* ViewController.swift */; };
+		DD7626D51EBBE77800B2A7EA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7626D41EBBE77800B2A7EA /* MapViewController.swift */; };
 		DD7626D81EBBE77800B2A7EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD7626D61EBBE77800B2A7EA /* Main.storyboard */; };
 		DD7626DB1EBBE77800B2A7EA /* Geography.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD7626D91EBBE77800B2A7EA /* Geography.xcdatamodeld */; };
 		DD7626DD1EBBE77800B2A7EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD7626DC1EBBE77800B2A7EA /* Assets.xcassets */; };
@@ -35,9 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD1FAA991EBBF4EA00694E0F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DD1FAA9B1EBBFD1C00694E0F /* customAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customAnnotationView.swift; sourceTree = "<group>"; };
 		DD7626CF1EBBE77800B2A7EA /* Geography.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geography.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD7626D21EBBE77800B2A7EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DD7626D41EBBE77800B2A7EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DD7626D41EBBE77800B2A7EA /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DD7626D71EBBE77800B2A7EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD7626DA1EBBE77800B2A7EA /* Geography.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Geography.xcdatamodel; sourceTree = "<group>"; };
 		DD7626DC1EBBE77800B2A7EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,8 +104,10 @@
 			isa = PBXGroup;
 			children = (
 				DD7626D21EBBE77800B2A7EA /* AppDelegate.swift */,
-				DD7626D41EBBE77800B2A7EA /* ViewController.swift */,
+				DD7626D41EBBE77800B2A7EA /* MapViewController.swift */,
+				DD1FAA9B1EBBFD1C00694E0F /* customAnnotationView.swift */,
 				DD7626D61EBBE77800B2A7EA /* Main.storyboard */,
+				DD1FAA991EBBF4EA00694E0F /* SettingsViewController.swift */,
 				DD7626DC1EBBE77800B2A7EA /* Assets.xcassets */,
 				DD7626DE1EBBE77800B2A7EA /* LaunchScreen.storyboard */,
 				DD7626E11EBBE77800B2A7EA /* Info.plist */,
@@ -265,9 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD7626D51EBBE77800B2A7EA /* ViewController.swift in Sources */,
+				DD7626D51EBBE77800B2A7EA /* MapViewController.swift in Sources */,
+				DD1FAA9C1EBBFD1C00694E0F /* customAnnotationView.swift in Sources */,
 				DD7626D31EBBE77800B2A7EA /* AppDelegate.swift in Sources */,
 				DD7626DB1EBBE77800B2A7EA /* Geography.xcdatamodeld in Sources */,
+				DD1FAA9A1EBBF4EA00694E0F /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +528,7 @@
 				DD7626FC1EBBE77800B2A7EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DD7626FD1EBBE77800B2A7EA /* Build configuration list for PBXNativeTarget "GeographyTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +537,7 @@
 				DD7626FF1EBBE77800B2A7EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DD7627001EBBE77800B2A7EA /* Build configuration list for PBXNativeTarget "GeographyUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +546,7 @@
 				DD7627021EBBE77800B2A7EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
