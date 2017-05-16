@@ -7,72 +7,40 @@
 //
 
 import UIKit
-import MapKit
-import CoreLocation
+import GoogleMaps
 
-class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
-    @IBOutlet var myMapView: MKMapView!
-    
+class MapViewController: UIViewController, GMSMapViewDelegate{
+    var Array = [Any]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let locationManager = CLLocationManager.init()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 0)
+        let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+        mapView.isMyLocationEnabled = true
+        mapView.delegate = self
+        view = mapView
         
-        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
-        centerMapOnLocation(location: initialLocation)
-        let tap = UIGestureRecognizer.init(target: self, action: #selector(LongPress))
-        myMapView.addGestureRecognizer(tap)
-        myMapView.delegate = self
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
+        marker.title = "Sydney"
+        marker.snippet = "Australia"
+        marker.map = mapView
+      
+    }
+    
+    public func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        print("\(coordinate)")
+        let geocoder = GMSGeocoder()
         
-        
-        // Do any additional setup after loading the view, typically from a nib.
+        geocoder.reverseGeocodeCoordinate(coordinate) {response,error in
+            if let location = response?.firstResult() {
+                print("\(location)")
+                self.Array.append(location)
+            }
+        }
+
+        }
     }
 
-    let regionRadius: CLLocationDistance = 100000
-    func centerMapOnLocation(location:CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
-        myMapView.setRegion(coordinateRegion, animated: true)
-    }
-    
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    @IBAction func LongPress(_ sender: UITapGestureRecognizer) {
-        print("pressed")
-        let point = sender.location(in: myMapView)
-        
-        let tapPoint = myMapView.convert(point, toCoordinateFrom: view)
-        
-        let pointAnnotation = MKPointAnnotation.init()
-        
-        pointAnnotation.coordinate = tapPoint
-        
-        pointAnnotation.subtitle = "Lat: \(tapPoint.latitude), Long: \(tapPoint.longitude)"
-        myMapView.addAnnotation(pointAnnotation)
-        
-
-//        if sender.state != UIGestureRecognizerState.began { return }
-//        let touchLocation = sender.location(ofTouch: 0, in: myMapView)
-//        print("\(touchLocation)")
-//        let locationCoordinate = myMapView.convert(touchLocation, toCoordinateFrom: myMapView)
-//        print("Tapped at lat: \(locationCoordinate.latitude) long: \(locationCoordinate.longitude)")
-    }
-    
-    }
-//
-//    @IBAction func revealRegionDetailsWithLongPressOnMap(sender: UILongPressGestureRecognizer) {
-//        if sender.state != UIGestureRecognizerState.began { return }
-//        let touchLocation = sender.location(in: myMapView)
-//        let locationCoordinate = myMapView.convert(touchLocation, toCoordinateFrom: myMapView)
-//        print("Tapped at lat: \(locationCoordinate.latitude) long: \(locationCoordinate.longitude)")
-//    }
-//    
-
-    
 
 

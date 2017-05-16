@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27DECD36FF16D99E5E17A4D9 /* libPods-Geography.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EDA024477266FC787433986 /* libPods-Geography.a */; };
 		DD1FAA9A1EBBF4EA00694E0F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1FAA991EBBF4EA00694E0F /* SettingsViewController.swift */; };
 		DD1FAA9C1EBBFD1C00694E0F /* customAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1FAA9B1EBBFD1C00694E0F /* customAnnotationView.swift */; };
 		DD7626D31EBBE77800B2A7EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7626D21EBBE77800B2A7EA /* AppDelegate.swift */; };
@@ -37,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EDA024477266FC787433986 /* libPods-Geography.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Geography.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A783334050B97B21D48B8D5 /* Pods-Geography.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Geography.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Geography/Pods-Geography.debug.xcconfig"; sourceTree = "<group>"; };
+		AD27F78703E44813B912B8FF /* Pods-Geography.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Geography.release.xcconfig"; path = "Pods/Target Support Files/Pods-Geography/Pods-Geography.release.xcconfig"; sourceTree = "<group>"; };
 		DD1FAA991EBBF4EA00694E0F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DD1FAA9B1EBBFD1C00694E0F /* customAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customAnnotationView.swift; sourceTree = "<group>"; };
 		DD7626CF1EBBE77800B2A7EA /* Geography.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geography.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27DECD36FF16D99E5E17A4D9 /* libPods-Geography.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +85,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		472C179C964D659B33A16E32 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A783334050B97B21D48B8D5 /* Pods-Geography.debug.xcconfig */,
+				AD27F78703E44813B912B8FF /* Pods-Geography.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B2AEE17A6487C5FB02B37C50 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0EDA024477266FC787433986 /* libPods-Geography.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DD7626C61EBBE77800B2A7EA = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +109,8 @@
 				DD7626E91EBBE77800B2A7EA /* GeographyTests */,
 				DD7626F41EBBE77800B2A7EA /* GeographyUITests */,
 				DD7626D01EBBE77800B2A7EA /* Products */,
+				472C179C964D659B33A16E32 /* Pods */,
+				B2AEE17A6487C5FB02B37C50 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,9 +165,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD7626FA1EBBE77800B2A7EA /* Build configuration list for PBXNativeTarget "Geography" */;
 			buildPhases = (
+				3621C9CE9FD1D1783CF4B371 /* [CP] Check Pods Manifest.lock */,
 				DD7626CB1EBBE77800B2A7EA /* Sources */,
 				DD7626CC1EBBE77800B2A7EA /* Frameworks */,
 				DD7626CD1EBBE77800B2A7EA /* Resources */,
+				A120B69B94792A19A224B320 /* [CP] Embed Pods Frameworks */,
+				E18E0CBF27DC00877EA8165C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,6 +292,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3621C9CE9FD1D1783CF4B371 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A120B69B94792A19A224B320 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Geography/Pods-Geography-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E18E0CBF27DC00877EA8165C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Geography/Pods-Geography-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DD7626CB1EBBE77800B2A7EA /* Sources */ = {
@@ -427,6 +502,7 @@
 		};
 		DD7626FB1EBBE77800B2A7EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A783334050B97B21D48B8D5 /* Pods-Geography.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GHZCTHXK8S;
@@ -440,6 +516,7 @@
 		};
 		DD7626FC1EBBE77800B2A7EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD27F78703E44813B912B8FF /* Pods-Geography.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GHZCTHXK8S;
